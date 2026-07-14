@@ -30,10 +30,21 @@ Each source is its own library with its own artwork, stats, and hub. Extra strea
 - **A real TV hub** — a static cinematic hero that mirrors whatever rail item has focus, above **Continue Watching**, **Up Next**, and per-launch shuffled **Suggestions** rails.
 - **TMDB + OMDb metadata** — posters, backdrops, ratings, and awards, cached on-device with a configurable image cache (256 MB – 1 GB).
 - **Instant library search** across movies and shows.
+- **Tap the cast** — select any actor on a detail page and see everything else they appear in across your library.
+- **Franchise & director rails** — a movie's page gathers the rest of its collection and more from the same director, straight from your own shelves.
+- **A–Z quick jump** — on big libraries, flick right past the last poster column and an alphabet strip fades in; jump by letter and focus lands on the poster, ready to play.
 - **Resume everywhere** — every play action, from any rail or grid, picks up exactly where you stopped.
 - **D-pad first** — every screen designed and battle-tested for remote navigation on a Leanback launcher, in Jetpack Compose for TV.
 
 <p align="center"><img src="docs/screenshots/grid-v4.png" width="92%" alt="Movie library grid" /></p>
+
+## <img src="https://img.shields.io/badge/KIDS%20MODE-FFB84D?style=for-the-badge&labelColor=1A1A1A" height="26"/> A library just for them
+
+One switch turns on a hand-picked kids' library. Long-press titles to add them; while Kids Mode is on, they leave the grown-up library entirely.
+
+- **Their own front door** — a Kids tile on the source chooser opens a bright, playful hub of big cards: Keep Watching plus their movies and shows, pooled from every drive and cloud with no source concept at all.
+- **Nothing to wander into** — no settings, no menus, no long-press actions, no adult rails; Back only leads to the chooser.
+- **Zero trace when off** — flip it off and the app looks exactly as before, and every pick is remembered for next time.
 
 ## <img src="https://img.shields.io/badge/PLAYBACK-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Playback that respects the source
 
@@ -47,16 +58,30 @@ Each source is its own library with its own artwork, stats, and hub. Extra strea
 
 <p align="center"><img src="docs/screenshots/player-v3.png" width="92%" alt="Player with live stats overlay" /></p>
 
+## <img src="https://img.shields.io/badge/DASHBOARD-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> The whole box, in any browser
+
+Flip one toggle and Beam serves a live dashboard straight from the TV box — open it on any phone or laptop on your network. No cloud, no account, nothing to install.
+
+- **A real remote** — play/pause, ±30 s, tap-to-seek, episode skip, and audio/subtitle track switching for whatever is on the TV right now.
+- **Fling anything to the TV** — find a title in the browser, tap **▶ TV**, and it starts on the big screen. Tap **▶ here** and it streams to the device in your hand instead.
+- **Your library, sliceable** — instant search; Movies / TV / Kids; 4K, Dolby Vision, and HDR10 facets; genre, decade, and rating filters; sortable spec columns; a poster wall; per-season episode drill-downs; watched toggles; library rescans — and a **Surprise me** button for when nobody can decide.
+- **Watch history** — every play with its resume state, one tap to send it back to the TV.
+- **Live telemetry for the curious** — stream and buffer sparklines, engine RAM meters, device thermals, per-process CPU, active DLNA relays — refreshed every second, and costing nothing while no browser is looking.
+- **Safe by design** — the page can drive playback and watch state, nothing else: settings and accounts never leave the TV.
+
+<p align="center"><img src="docs/screenshots/dashboard-v1.png" width="92%" alt="Web dashboard — live playback and device stats" /></p>
+<p align="center"><img src="docs/screenshots/dashboard-library-v1.png" width="92%" alt="Web dashboard — library browser with facets and filters" /></p>
+
+## <img src="https://img.shields.io/badge/SHARING-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Media Server for Kodi
+
+One toggle publishes the whole library — movies and TV with covers and titles — as a **UPnP/DLNA media server**. Kodi (or any UPnP client) browses Beam and direct-plays from Mega, your seedbox, and local drives, with Beam's engines relaying the original bytes. Survives reboots until you switch it off — and the same relay is what lets the dashboard stream to your phone.
+
 ## <img src="https://img.shields.io/badge/ENGINE-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Under the hood
 
 - **Embedded streaming engine** runs as a local server; the player streams from `127.0.0.1`, so every source looks identical to the decoder.
 - **Per-source tuned RAM read-ahead** — a 128 MB player buffer backed by hundreds of megabytes of engine-side read-ahead, profiled on real hardware until cold starts, seeks, and steady-state playback all held up on a memory-constrained 2015 SHIELD.
 - **Dual engines** — a tuned stable engine as the default, with a one-toggle experimental modern engine for A/B testing on your own device.
 - **Room-backed catalog** — the library, watch state, and media specs live in a relational store; the app starts from cache instantly and scans refresh incrementally.
-
-## <img src="https://img.shields.io/badge/SHARING-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Media Server for Kodi
-
-One toggle publishes the whole library — movies and TV with covers and titles — as a **UPnP/DLNA media server**. Kodi (or any UPnP client) browses Beam and direct-plays from Mega and local drives, with Beam's engine relaying the bytes. Survives reboots until you switch it off.
 
 ## <img src="https://img.shields.io/badge/STACK-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Tech stack
 
@@ -68,4 +93,4 @@ One toggle publishes the whole library — movies and TV with covers and titles 
   <img src="https://img.shields.io/badge/TMDB-1A1A1A?style=for-the-badge&logo=themoviedatabase&logoColor=01B4E4" />
 </p>
 
-<sub>Screens shown are design renders of the app's actual UI layouts; poster artwork is public-domain classic-film posters via Wikimedia Commons.</sub>
+<sub>Screens shown are design renders of the app's actual UI layouts; the dashboard screens are the real page fed simulated data. Poster artwork and titles are public-domain classic films via Wikimedia Commons.</sub>
