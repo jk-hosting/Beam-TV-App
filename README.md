@@ -45,7 +45,7 @@ Each source is its own library with its own artwork, stats, and hub. Extra strea
 - **External player handoff** — prefer VLC, MX Player, or Just Player? Beam hands them the stream URL and a foreground service keeps the engine alive while they play.
 - **Display control** — pin the whole app UI to a chosen refresh rate, or leave it to the system.
 
-<p align="center"><img src="docs/screenshots/player-v2.png" width="92%" alt="Player with live stats overlay" /></p>
+<p align="center"><img src="docs/screenshots/player-v3.png" width="92%" alt="Player with live stats overlay" /></p>
 
 ## <img src="https://img.shields.io/badge/ENGINE-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Under the hood
 
