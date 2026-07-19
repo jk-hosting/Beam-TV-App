@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beam — Your media, one Android TV library</title>
+<meta name="description" content="Beam turns an Android TV box into a direct line to your own media — cloud storage, seedbox, and USB drives in one native Leanback library, streamed raw to the big screen.">
+<meta property="og:title" content="Beam — Your media, one Android TV library">
+<meta property="og:description" content="Cloud storage, seedbox, and USB drives — one native Android TV library, streamed raw to the big screen.">
+<meta property="og:image" content="https://jk-hosting.github.io/Beam-TV-App/screenshots/hub-v3.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231A1A1A'/><polygon points='35,25 78,50 35,75' fill='%237EA6FF'/></svg>">
+<style>
+  :root {
+    --bg: #0b0d12;
+    --panel: #12151c;
+    --line: #222835;
+    --text: #d7dde8;
+    --muted: #8b95a7;
+    --accent: #7EA6FF;
+    --kids: #FFB84D;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 64px 0; }
+  section + section { border-top: 1px solid var(--line); }
+
+  .hero { text-align: center; padding: 72px 0 56px; }
+  .hero .banner { width: min(560px, 86%); height: auto; }
+  .hero .tagline {
+    font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+    font-weight: 600;
+    margin: 28px auto 18px;
+    max-width: 46ch;
+    color: #fff;
+  }
+  .hero .tagline em { color: var(--accent); font-style: normal; }
+  .badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 14px 0 30px; }
+  .badges img { height: 28px; }
+  .hero p.intro {
+    max-width: 72ch; margin: 0 auto 40px; color: var(--muted);
+    font-size: 1.02rem; text-align: left;
+  }
+
+  .shot {
+    display: block; width: 100%; height: auto;
+    border-radius: 10px; border: 1px solid var(--line);
+    box-shadow: 0 18px 50px rgba(0,0,0,.55);
+  }
+  .shot + .shot { margin-top: 28px; }
+
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #fff; letter-spacing: -.01em; margin-bottom: 8px;
+  }
+  .kicker {
+    display: inline-block; font-size: .75rem; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); background: rgba(126,166,255,.1);
+    border: 1px solid rgba(126,166,255,.25);
+    padding: 3px 10px; border-radius: 999px; margin-bottom: 14px;
+  }
+  .kicker.kids { color: var(--kids); background: rgba(255,184,77,.1); border-color: rgba(255,184,77,.3); }
+  .lede { color: var(--muted); max-width: 72ch; margin-bottom: 32px; }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 12px; padding: 20px;
+  }
+  .card b { color: #fff; display: block; margin-bottom: 6px; font-size: 1.05rem; }
+  .card p { color: var(--muted); font-size: .93rem; }
+
+  ul.features { list-style: none; margin-bottom: 36px; display: grid; gap: 12px; }
+  ul.features li { padding-left: 26px; position: relative; color: var(--muted); }
+  ul.features li::before {
+    content: ""; position: absolute; left: 0; top: .48em;
+    width: 12px; height: 12px; border-radius: 3px;
+    background: linear-gradient(135deg, var(--accent), #4a6db8);
+  }
+  ul.features li b { color: var(--text); }
+  .kids-section ul.features li::before { background: linear-gradient(135deg, var(--kids), #c77f1f); }
+
+  .stack { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+  .stack img { height: 28px; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 36px 0 48px; text-align: center;
+    color: #5c6474; font-size: .8rem;
+  }
+  footer a { color: var(--muted); }
+
+  @media (max-width: 760px) {
+    section { padding: 48px 0; }
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <img class="banner" src="banner-v2.png" alt="Beam">
+  <p class="tagline">Your cloud storage, your seedbox, your USB drives — <em>one native Android TV library</em>, streamed raw to the big screen.</p>
+  <div class="badges">
+    <img src="https://img.shields.io/badge/ANDROID%20TV-Leanback%20native-7EA6FF?style=for-the-badge&logo=android&logoColor=white&labelColor=1A1A1A" alt="Android TV — Leanback native">
+    <img src="https://img.shields.io/badge/ANDROID-8.0%2B-7EA6FF?style=for-the-badge&labelColor=1A1A1A" alt="Android 8.0+">
+  </div>
+  <p class="intro">Beam turns an Android TV box into a direct line to your own media, wherever it lives. No Plex server, no transcoding box in a closet, no per-source apps: an embedded engine streams the original bytes straight to the decoder, with RAM read-ahead tuned hard enough that high-bitrate 4K HDR remuxes play smoothly on hardware as old as the 2015 NVIDIA SHIELD.</p>
+  <img class="shot" src="screenshots/hub-v3.png" alt="Beam home hub">
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Sources</span>
+    <h2>Three libraries, one chooser</h2>
+    <p class="lede">Each source is its own library with its own artwork, stats, and hub. Extra streamed sources stack neatly into the chooser — and Beam remembers which library you picked last and starts there.</p>
+    <div class="cards">
+      <div class="card"><b>Mega</b><p>Sign in once — your cloud library appears as a poster wall. An embedded streaming engine serves files directly; nothing is downloaded first.</p></div>
+      <div class="card"><b>Seedbox (HTTPS)</b><p>Point Beam at any HTTPS file server and it becomes a second cloud library with its own isolated streaming engine — a misbehaving box can never touch Mega playback.</p></div>
+      <div class="card"><b>Local Drives</b><p>USB and internal storage with explicit per-drive Movies/TV folder assignment. Incremental scans; detached drives are remembered and flagged, not forgotten.</p></div>
+    </div>
+    <img class="shot" src="screenshots/chooser-v2.png" alt="Source chooser">
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Experience</span>
+    <h2>Built for the couch</h2>
+    <ul class="features">
+      <li><b>A real TV hub</b> — a static cinematic hero that mirrors whatever rail item has focus, above <b>Continue Watching</b>, <b>Up Next</b>, and per-launch shuffled <b>Suggestions</b> rails.</li>
+      <li><b>TMDB + OMDb metadata</b> — posters, backdrops, ratings, and awards, cached on-device with a configurable image cache (256&nbsp;MB – 1&nbsp;GB).</li>
+      <li><b>Instant library search</b> across movies and shows.</li>
+      <li><b>Tap the cast</b> — select any actor on a detail page and see everything else they appear in across your library.</li>
+      <li><b>Franchise &amp; director rails</b> — a movie's page gathers the rest of its collection and more from the same director, straight from your own shelves.</li>
+      <li><b>A–Z quick jump</b> — on big libraries, flick right past the last poster column and an alphabet strip fades in; jump by letter and focus lands on the poster, ready to play.</li>
+      <li><b>Resume everywhere</b> — every play action, from any rail or grid, picks up exactly where you stopped.</li>
+      <li><b>D-pad first</b> — every screen designed and battle-tested for remote navigation on a Leanback launcher, in Jetpack Compose for TV.</li>
+    </ul>
+    <img class="shot" src="screenshots/grid-v4.png" alt="Movie library grid">
+  </div>
+</section>
+
+<section class="kids-section">
+  <div class="wrap">
+    <span class="kicker kids">Kids Mode</span>
+    <h2>A library just for them</h2>
+    <p class="lede">One switch turns on a hand-picked kids' library. Long-press titles to add them; while Kids Mode is on, they leave the grown-up library entirely.</p>
+    <ul class="features">
+      <li><b>Their own front door</b> — a Kids tile on the source chooser opens a bright, playful hub of big cards: Keep Watching plus their movies and shows, pooled from every drive and cloud with no source concept at all.</li>
+      <li><b>Nothing to wander into</b> — no settings, no menus, no long-press actions, no adult rails; Back only leads to the chooser.</li>
+      <li><b>Zero trace when off</b> — flip it off and the app looks exactly as before, and every pick is remembered for next time.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Playback</span>
+    <h2>Playback that respects the source</h2>
+    <ul class="features">
+      <li><b>Match Frame Rate</b> — switches the TV to the film's native rate to kill judder.</li>
+      <li><b>Tunneled Playback</b> — hardware A/V sync for high-bitrate 4K/HDR streams.</li>
+      <li><b>Auto-Play Next Episode</b> — with an Up Next card near the end of each episode: OK plays now, Back cancels.</li>
+      <li><b>Playback Info Overlay</b> — a live stats panel: codec, content fps vs display Hz, dropped frames, live stream bitrate, and how many megabytes of RAM runway the engine is holding — refreshed every second, toggleable in Settings.</li>
+      <li><b>Analyze Media Specs</b> — an on-device probe reads each file's real codec, resolution, HDR type, and audio track — down to Dolby Vision profile strings (<code>dvhe.07.06</code>), HDR10, and TrueHD Atmos.</li>
+      <li><b>External player handoff</b> — prefer VLC, MX Player, or Just Player? Beam hands them the stream URL and a foreground service keeps the engine alive while they play.</li>
+      <li><b>Display control</b> — pin the whole app UI to a chosen refresh rate, or leave it to the system.</li>
+    </ul>
+    <img class="shot" src="screenshots/player-v3.png" alt="Player with live stats overlay">
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Dashboard</span>
+    <h2>The whole box, in any browser</h2>
+    <p class="lede">Flip one toggle and Beam serves a live dashboard straight from the TV box — open it on any phone or laptop on your network. No cloud, no account, nothing to install.</p>
+    <ul class="features">
+      <li><b>A real remote</b> — play/pause, ±30&nbsp;s, tap-to-seek, episode skip, and audio/subtitle track switching for whatever is on the TV right now.</li>
+      <li><b>Fling anything to the TV</b> — find a title in the browser, tap <b>▶ TV</b>, and it starts on the big screen. Tap <b>▶ here</b> and it streams to the device in your hand instead.</li>
+      <li><b>Your library, sliceable</b> — instant search; Movies / TV / Kids; 4K, Dolby Vision, and HDR10 facets; genre, decade, and rating filters; sortable spec columns; a poster wall; per-season episode drill-downs; watched toggles; library rescans — and a <b>Surprise me</b> button for when nobody can decide.</li>
+      <li><b>Watch history</b> — every play with its resume state, one tap to send it back to the TV.</li>
+      <li><b>Live telemetry for the curious</b> — stream and buffer sparklines, engine RAM meters, device thermals, per-process CPU, active DLNA relays — refreshed every second, and costing nothing while no browser is looking.</li>
+      <li><b>Safe by design</b> — the page can drive playback and watch state, nothing else: settings and accounts never leave the TV.</li>
+    </ul>
+    <img class="shot" src="screenshots/dashboard-v1.png" alt="Web dashboard — live playback and device stats">
+    <img class="shot" src="screenshots/dashboard-library-v1.png" alt="Web dashboard — library browser with facets and filters">
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Sharing</span>
+    <h2>Media Server for Kodi</h2>
+    <p class="lede">One toggle publishes the whole library — movies and TV with covers and titles — as a <b>UPnP/DLNA media server</b>. Kodi (or any UPnP client) browses Beam and direct-plays from Mega, your seedbox, and local drives, with Beam's engines relaying the original bytes. Survives reboots until you switch it off — and the same relay is what lets the dashboard stream to your phone.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Engine</span>
+    <h2>Under the hood</h2>
+    <ul class="features">
+      <li><b>Embedded streaming engine</b> runs as a local server; the player streams from <code>127.0.0.1</code>, so every source looks identical to the decoder.</li>
+      <li><b>Per-source tuned RAM read-ahead</b> — a 128&nbsp;MB player buffer backed by hundreds of megabytes of engine-side read-ahead, profiled on real hardware until cold starts, seeks, and steady-state playback all held up on a memory-constrained 2015 SHIELD.</li>
+      <li><b>Dual engines</b> — a tuned stable engine as the default, with a one-toggle experimental modern engine for A/B testing on your own device.</li>
+      <li><b>Room-backed catalog</b> — the library, watch state, and media specs live in a relational store; the app starts from cache instantly and scans refresh incrementally.</li>
+    </ul>
+    <div class="stack">
+      <img src="https://img.shields.io/badge/Kotlin-1A1A1A?style=for-the-badge&logo=kotlin&logoColor=7F52FF" alt="Kotlin">
+      <img src="https://img.shields.io/badge/Jetpack%20Compose%20for%20TV-1A1A1A?style=for-the-badge&logo=jetpackcompose&logoColor=4285F4" alt="Jetpack Compose for TV">
+      <img src="https://img.shields.io/badge/Media3%20ExoPlayer-1A1A1A?style=for-the-badge&logo=android&logoColor=3DDC84" alt="Media3 ExoPlayer">
+      <img src="https://img.shields.io/badge/Room%20%2F%20SQLite-1A1A1A?style=for-the-badge&logo=sqlite&logoColor=79b8f3" alt="Room / SQLite">
+      <img src="https://img.shields.io/badge/TMDB-1A1A1A?style=for-the-badge&logo=themoviedatabase&logoColor=01B4E4" alt="TMDB">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Screens shown are design renders of the app's actual UI layouts; the dashboard screens are the real page fed simulated data.<br>Poster artwork and titles are public-domain classic films via Wikimedia Commons.</p>
+    <p style="margin-top:10px"><a href="https://github.com/jk-hosting/Beam-TV-App">github.com/jk-hosting/Beam-TV-App</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
