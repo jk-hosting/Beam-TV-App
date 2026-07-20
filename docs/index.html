@@ -92,6 +92,34 @@
   .stack { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
   .stack img { height: 28px; }
 
+  .cta-group { text-align: center; margin: 32px 0 12px; }
+  .cta {
+    display: inline-block;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0b0d12;
+    background: linear-gradient(135deg, var(--accent), #5b8bf5);
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    letter-spacing: .02em;
+    box-shadow: 0 0 24px rgba(126,166,255,.35), 0 4px 14px rgba(0,0,0,.4);
+    transition: transform .2s ease, box-shadow .2s ease;
+    cursor: pointer;
+  }
+  .cta:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 36px rgba(126,166,255,.55), 0 8px 24px rgba(0,0,0,.5);
+  }
+  .cta:active { transform: translateY(0) scale(.99); }
+  .cta-note {
+    display: block;
+    margin-top: 10px;
+    font-size: .82rem;
+    color: var(--muted);
+  }
+
   footer {
     border-top: 1px solid var(--line);
     padding: 36px 0 48px; text-align: center;
@@ -113,6 +141,10 @@
   <div class="badges">
     <img src="https://img.shields.io/badge/ANDROID%20TV-Leanback%20native-7EA6FF?style=for-the-badge&logo=android&logoColor=white&labelColor=1A1A1A" alt="Android TV — Leanback native">
     <img src="https://img.shields.io/badge/ANDROID-8.0%2B-7EA6FF?style=for-the-badge&labelColor=1A1A1A" alt="Android 8.0+">
+  </div>
+  <div class="cta-group">
+    <a class="cta" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+    <small class="cta-note">One-time purchase · Instant access · Invoice included</small>
   </div>
   <p class="intro">Beam turns an Android TV box into a direct line to your own media, wherever it lives. No Plex server, no transcoding box in a closet, no per-source apps: an embedded engine streams the original bytes straight to the decoder, with RAM read-ahead tuned hard enough that high-bitrate 4K HDR remuxes play smoothly on hardware as old as the 2015 NVIDIA SHIELD.</p>
   <img class="shot" src="screenshots/hub-v3.png" alt="Beam home hub">
