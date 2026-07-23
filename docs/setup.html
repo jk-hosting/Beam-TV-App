@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beam — Setup guide</title>
+<meta name="description" content="How to set up Beam after install: free TMDB and OMDb keys for artwork, connecting Mega S4, an HTTPS seedbox or USB drives, and sharing to Kodi and your browser.">
+<meta name="theme-color" content="#0B0D12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Beam — Setup guide">
+<meta property="og:description" content="Free artwork keys, connect your storage, scan and play. The whole one-time setup in a few minutes.">
+<meta property="og:url" content="https://jk-hosting.github.io/Beam-TV-App/setup.html">
+<meta property="og:image" content="https://jk-hosting.github.io/Beam-TV-App/screenshots/hub-v3.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beam — Setup guide">
+<meta name="twitter:description" content="Free artwork keys, connect your storage, scan and play.">
+<meta name="twitter:image" content="https://jk-hosting.github.io/Beam-TV-App/screenshots/hub-v3.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231A1A1A'/><polygon points='35,25 78,50 35,75' fill='%237EA6FF'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0D12; --bg2:#0F131B; --card:#12151C; --card2:#171B26;
+  --line:rgba(126,166,255,.16); --line2:rgba(126,166,255,.08);
+  --accent:#7EA6FF; --accent-bright:#5B8BF5; --accent-deep:#3A5CC0;
+  --ink:#EAF0FB; --muted:#8B95A7; --kids:#FFB84D; --maxw:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(60vw 60vw at 82% -8%, rgba(91,139,245,.16), transparent 60%),
+    radial-gradient(55vw 55vw at -5% 105%, rgba(58,92,192,.12), transparent 60%);
+}
+a{color:inherit; text-decoration:none}
+h1,h2,h3{font-family:'Sora',system-ui,sans-serif; line-height:1.15; margin:0}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+.narrow{max-width:820px}
+.eyebrow{font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent)}
+.muted{color:var(--muted)}
+
+/* APP BAR */
+.appbar{display:flex; justify-content:center; align-items:center; gap:11px; flex-wrap:wrap; padding:9px 24px; font-size:.82rem; color:var(--muted); background:var(--bg2); border-bottom:1px solid var(--line2)}
+.appbar .lbl{font-weight:600; letter-spacing:.02em}
+.appbar a{display:inline-flex; align-items:center; gap:6px; font-weight:600; color:var(--ink); padding:5px 13px; border-radius:999px; background:var(--card); border:1px solid var(--line2); transition:border-color .2s, color .2s}
+.appbar a:hover{border-color:var(--accent); color:var(--accent)}
+.appbar a svg{width:12px; height:12px; opacity:.7}
+
+/* NAV */
+nav{position:sticky; top:0; z-index:50; height:66px; display:flex; align-items:center; background:rgba(11,13,18,.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line2)}
+nav .wrap{display:flex; align-items:center; gap:24px; width:100%}
+.brand{display:flex; align-items:center; gap:11px; font-family:'Sora',sans-serif; font-weight:800; font-size:1.12rem}
+.brand .mark{width:30px; height:30px; border-radius:8px; background:#1A1A1A; display:grid; place-items:center}
+.brand .mark svg{width:16px; height:16px}
+.navlinks{display:flex; gap:26px; margin-left:auto; font-size:.94rem; font-weight:500}
+.navlinks a{color:var(--muted); transition:color .2s}
+.navlinks a:hover{color:var(--ink)}
+.nav-cta{margin-left:8px}
+
+/* BUTTONS */
+.btn{display:inline-flex; align-items:center; gap:9px; font-weight:700; font-size:.98rem; padding:13px 24px; border-radius:14px; border:1px solid transparent; cursor:pointer; background:linear-gradient(135deg,var(--accent),var(--accent-bright)); color:#0b0d12; box-shadow:0 10px 34px rgba(91,139,245,.32); transition:transform .18s, box-shadow .18s}
+.btn:hover{transform:translateY(-2px); box-shadow:0 16px 44px rgba(91,139,245,.45)}
+.btn.small{padding:9px 18px; font-size:.9rem; box-shadow:0 6px 20px rgba(91,139,245,.28)}
+.btn-ghost{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:.98rem; padding:13px 22px; border-radius:14px; background:transparent; color:var(--ink); border:1px solid var(--line); transition:border-color .2s, background .2s}
+.btn-ghost:hover{border-color:var(--accent); background:rgba(126,166,255,.06)}
+
+/* HERO */
+.hero{padding:60px 0 20px}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3rem); font-weight:800; letter-spacing:-.02em; margin:16px 0}
+.hero h1 .accent{background:linear-gradient(120deg,var(--accent),var(--accent-bright)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+.hero p.lead{font-size:1.14rem; color:var(--muted); max-width:640px}
+.cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:26px}
+
+/* REQUIREMENTS */
+.req{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:40px}
+.fcard{background:var(--card); border:1px solid var(--line2); border-radius:20px; padding:22px}
+.fcard .ico{width:44px; height:44px; border-radius:12px; display:grid; place-items:center; margin-bottom:14px; background:rgba(91,139,245,.14); border:1px solid var(--line); color:var(--accent)}
+.fcard .ico svg{width:22px; height:22px}
+.fcard h3{font-size:1.02rem; font-weight:700; margin-bottom:6px}
+.fcard p{color:var(--muted); font-size:.92rem; margin:0}
+.fcard .free{display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); background:rgba(126,166,255,.1); border:1px solid var(--line); padding:2px 8px; border-radius:999px; margin-left:8px; vertical-align:middle}
+
+/* STEPS OVERVIEW */
+.steps{display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:center; gap:14px; max-width:820px; margin:40px auto 0}
+.step{display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px}
+.step .num{width:42px; height:42px; border-radius:50%; display:grid; place-items:center; font-family:'Sora',sans-serif; font-weight:700; color:#0b0d12; background:linear-gradient(135deg,var(--accent),var(--accent-deep)); box-shadow:0 8px 24px rgba(91,139,245,.4)}
+.step .lbl{font-family:'Sora',sans-serif; font-weight:700; letter-spacing:.06em; font-size:.95rem}
+.arrow{color:var(--accent); font-size:1.4rem; opacity:.6}
+
+/* GUIDE SECTIONS */
+section{padding:60px 0}
+section+section{border-top:1px solid var(--line2)}
+.shead{display:flex; align-items:center; gap:14px}
+.shead .badge{flex:0 0 auto; width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:rgba(91,139,245,.14); border:1px solid var(--line); color:var(--accent)}
+.shead .badge svg{width:23px; height:23px}
+.shead h2{font-size:clamp(1.6rem,3.2vw,2.1rem); font-weight:800; letter-spacing:-.01em}
+.sub-lead{color:var(--muted); font-size:1.05rem; margin:16px 0 0; max-width:720px}
+.subhead{font-family:'Sora',sans-serif; font-weight:700; font-size:1.12rem; margin:34px 0 4px}
+
+/* NUMBERED STEP LIST */
+ol.steps-list{counter-reset:s; list-style:none; padding:0; display:grid; gap:12px; margin:20px 0 0}
+ol.steps-list li{position:relative; padding:15px 18px 15px 58px; background:var(--card); border:1px solid var(--line2); border-radius:14px; color:var(--muted)}
+ol.steps-list li::before{counter-increment:s; content:counter(s); position:absolute; left:15px; top:14px; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; font-family:'Sora',sans-serif; font-weight:700; font-size:.9rem; color:#0b0d12; background:linear-gradient(135deg,var(--accent),var(--accent-deep))}
+ol.steps-list li b{color:var(--ink)}
+ol.steps-list li a{color:var(--accent); text-decoration:underline; text-underline-offset:2px}
+.path{font-family:'Sora',sans-serif; font-weight:600; color:var(--ink)}
+.kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.85em; background:var(--card2); border:1px solid var(--line2); border-radius:6px; padding:2px 7px; color:var(--ink); white-space:nowrap}
+
+/* NOTES */
+.note{margin-top:18px; padding:14px 16px; border-radius:14px; background:rgba(126,166,255,.06); border:1px solid var(--line); color:var(--muted); font-size:.93rem}
+.note.warn{background:rgba(255,184,77,.07); border-color:rgba(255,184,77,.32)}
+.note b{color:var(--ink)}
+.note .tag{font-weight:700; color:var(--accent)}
+.note.warn .tag{color:var(--kids)}
+
+/* AFTER GRID */
+.grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:34px}
+.grid4 .fcard{border-radius:18px}
+
+/* CLOSER + FOOTER */
+.closer{text-align:center; padding:80px 0}
+.closer h2{font-size:clamp(1.7rem,3.6vw,2.4rem); font-weight:800; letter-spacing:-.02em}
+.closer p{color:var(--muted); font-size:1.06rem; margin:14px auto 26px; max-width:520px}
+footer{border-top:1px solid var(--line2); padding:40px 0; background:var(--bg2)}
+footer .wrap{display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:space-between}
+footer .brand{font-size:1rem}
+footer .fnav{display:flex; gap:22px; flex-wrap:wrap; font-size:.9rem; color:var(--muted)}
+footer .fnav a:hover{color:var(--ink)}
+footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
+
+@media(max-width:900px){
+  .req{grid-template-columns:1fr}
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .navlinks{display:none}
+}
+@media(max-width:560px){
+  .grid4{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr; gap:6px}
+  .arrow{transform:rotate(90deg)}
+}
+</style>
+</head>
+<body>
+
+<div class="appbar">
+  <span class="lbl">More apps</span>
+  <a href="https://jk-hosting.github.io/BoulderLog-App/">BoulderLog<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a href="https://jk-hosting.github.io/BoulderTrain-App/">BoulderTrain<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a href="https://jk-hosting.github.io/CoffeeAeye-App/">Coffee Aeye<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+</div>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 100 100"><polygon points="35,25 78,50 35,75" fill="#7EA6FF"/></svg></span>Beam</a>
+    <div class="navlinks">
+      <a href="index.html">Overview</a>
+      <a href="#metadata">Metadata</a>
+      <a href="#mega">Mega</a>
+      <a href="#seedbox">Seedbox</a>
+      <a href="#drives">Drives</a>
+      <a href="#sharing">Sharing</a>
+    </div>
+    <a class="btn small nav-cta" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap narrow">
+    <span class="eyebrow">Setup guide</span>
+    <h1>Set up Beam in <span class="accent">a few minutes.</span></h1>
+    <p class="lead">Beam plays from your own storage, so setup is two things: give it a couple of free keys for artwork, then point it at where your media lives. Everything below is one-time, and all of it lives in the app's <span class="path">Settings</span> screen.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+      <a class="btn-ghost" href="index.html">Back to overview</a>
+    </div>
+
+    <div class="req">
+      <div class="fcard">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 4v5M17 4v5"/></svg></div>
+        <h3>A TMDB key <span class="free">Free</span></h3>
+        <p>Posters, backdrops and plot details. Without it, titles fall back to the file name.</p>
+      </div>
+      <div class="fcard">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3Z"/></svg></div>
+        <h3>An OMDb key <span class="free">Free · optional</span></h3>
+        <p>Adds IMDb, Rotten Tomatoes and Metacritic ratings plus awards during a scan.</p>
+      </div>
+      <div class="fcard">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.3A3.5 3.5 0 0 1 18 18H7Z"/></svg></div>
+        <h3>At least one source</h3>
+        <p>A Mega S4 bucket, an HTTPS seedbox, or a USB / SD drive. Mix as many as you like.</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div class="lbl">ADD KEYS</div><div class="muted" style="font-size:.85rem">TMDB, then OMDb</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="num">2</div><div class="lbl">CONNECT</div><div class="muted" style="font-size:.85rem">Cloud, seedbox or USB</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="num">3</div><div class="lbl">SCAN &amp; PLAY</div><div class="muted" style="font-size:.85rem">Beam builds the library</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="metadata">
+  <div class="wrap narrow">
+    <div class="shead">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 4v5M17 4v5"/></svg></span>
+      <h2>Metadata keys</h2>
+    </div>
+    <p class="sub-lead">Two free keys turn bare file names into a poster wall with ratings. Get them once, paste them in, and every scan uses them.</p>
+
+    <div class="subhead">TMDB — posters &amp; details</div>
+    <ol class="steps-list">
+      <li>Create a free account at <a href="https://www.themoviedb.org/signup" target="_blank" rel="noopener">themoviedb.org</a>.</li>
+      <li>Open <b>Settings → API</b> in your TMDB account and request a key — a <b>Developer</b> key for personal use is free and instant.</li>
+      <li>Copy the <b>API Key (v3 auth)</b> — the short key, <b>not</b> the long "API Read Access Token".</li>
+      <li>In Beam: <span class="path">Settings → Metadata → TMDB API Key</span> → paste it and save.</li>
+    </ol>
+    <div class="note"><span class="tag">Note</span> &nbsp;Beam runs without a TMDB key, but titles show as their file names with no artwork. This is the one key worth adding first.</div>
+
+    <div class="subhead">OMDb — extra ratings &amp; awards</div>
+    <ol class="steps-list">
+      <li>Go to <a href="https://www.omdbapi.com/apikey.aspx" target="_blank" rel="noopener">omdbapi.com</a> and request a key on the <b>FREE</b> tier — 1,000 lookups per day.</li>
+      <li>Enter your email, then click the <b>activation link</b> OMDb sends you.</li>
+      <li>In Beam: <span class="path">Settings → Metadata → OMDb API Key</span> → paste it and save.</li>
+    </ol>
+    <div class="note"><span class="tag">Note</span> &nbsp;Optional. It adds IMDb / Rotten Tomatoes / Metacritic scores and awards, fetched while a scan runs.</div>
+  </div>
+</section>
+
+<section id="mega">
+  <div class="wrap narrow">
+    <div class="shead">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.3A3.5 3.5 0 0 1 18 18H7Z"/></svg></span>
+      <h2>Mega (S4 object storage)</h2>
+    </div>
+    <p class="sub-lead">Beam streams Mega through <b>Mega S4</b> — Mega's S3-compatible object storage — not a normal MEGA Drive folder. You keep your media in an S4 bucket and sign in with a key pair.</p>
+    <div class="note warn"><span class="tag">Important</span> &nbsp;Your everyday MEGA email and password will <b>not</b> work here. Beam needs an <b>S4 Access Key</b> and <b>Secret Key</b> from Mega's Object Storage (S4) console.</div>
+    <ol class="steps-list">
+      <li>In your MEGA account, open <b>Object Storage (S4)</b> and create a <b>bucket</b>.</li>
+      <li>Upload your Movies and TV Shows into the bucket. Keep tidy file and folder names — Beam matches titles from them (e.g. <span class="kbd">Metropolis (1927).mkv</span>).</li>
+      <li>In the S4 console, create an <b>access key pair</b> and copy the <b>Access Key</b> and <b>Secret Key</b>.</li>
+      <li>In Beam: <span class="path">Settings → Cloud → Mega → Sign in</span>, then paste the <b>S4 Access Key</b> and <b>S4 Secret Key</b>.</li>
+    </ol>
+    <div class="note"><span class="tag">Note</span> &nbsp;Once signed in, your Mega library appears as its own poster wall. Files are streamed directly — nothing is downloaded first. Run a scan (or reopen the library) to pull artwork.</div>
+  </div>
+</section>
+
+<section id="seedbox">
+  <div class="wrap narrow">
+    <div class="shead">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 7.5h.01M8 16.5h.01"/></svg></span>
+      <h2>Seedbox (HTTPS)</h2>
+    </div>
+    <p class="sub-lead">Any file server that lists a folder over HTTPS becomes a second cloud library, on its own isolated engine — a misbehaving box can never touch Mega playback.</p>
+    <ol class="steps-list">
+      <li>Make sure your seedbox serves your media over <b>HTTPS</b> with a browsable directory listing, protected by a username and password.</li>
+      <li>In Beam: <span class="path">Settings → Cloud → Seedbox (HTTPS) → Sign in</span>.</li>
+      <li>Enter the <b>Base URL</b> (for example <span class="kbd">https://your-box.example.com/media/</span>), then the <b>Username</b> and <b>Password</b>.</li>
+      <li><b>Relaunch Beam.</b> The seedbox appears as its own library alongside Mega and Local.</li>
+    </ol>
+    <div class="note"><span class="tag">Note</span> &nbsp;Seedbox changes apply at the next app launch. If titles look bare, open the library once so a scan can fetch artwork with your TMDB key.</div>
+  </div>
+</section>
+
+<section id="drives">
+  <div class="wrap narrow">
+    <div class="shead">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="18" height="8" rx="2"/><path d="M3 12l3-7h12l3 7M8 16h.01M12 16h6"/></svg></span>
+      <h2>Local drives (USB / SD)</h2>
+    </div>
+    <p class="sub-lead">Plug storage straight into the TV box. You tell Beam which folders hold Movies and TV Shows, and only those are scanned.</p>
+    <ol class="steps-list">
+      <li>Plug a <b>USB stick or SD card</b> into the Android TV box.</li>
+      <li>In Beam: <span class="path">Settings → Local Drives → + Add Drive</span>, and pick the drive.</li>
+      <li>Choose <b>Set Folders</b> — assign one folder as <b>Movies</b> and one as <b>TV Shows</b>. Unassigned folders are ignored.</li>
+      <li>Tap <b>Scan Library</b> to build the library and fetch artwork.</li>
+    </ol>
+    <div class="note"><span class="tag">Note</span> &nbsp;Unplug a drive and its titles are <b>kept and flagged</b>, not deleted — plug it back in and they return. Remove a drive in Settings to drop its titles for good.</div>
+  </div>
+</section>
+
+<section id="sharing">
+  <div class="wrap narrow">
+    <div class="shead">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.8a16 16 0 0 1 20 0"/><path d="M5 12.3a11 11 0 0 1 14 0"/><path d="M8.5 15.8a6 6 0 0 1 7 0"/><path d="M12 19.5h.01"/></svg></span>
+      <h2>Share to Kodi &amp; your browser</h2>
+    </div>
+    <p class="sub-lead">Optional. One toggle each — both stay on across reboots until you switch them off.</p>
+
+    <div class="subhead">Media Server for Kodi (UPnP)</div>
+    <ol class="steps-list">
+      <li>In Beam: <span class="path">Settings → Network Sharing → Media Server for Kodi (UPnP)</span> → on.</li>
+      <li>In Kodi: <b>Add videos → Browse → UPnP devices → Beam</b>, and direct-play from Mega and your drives.</li>
+    </ol>
+
+    <div class="subhead">Web dashboard</div>
+    <ol class="steps-list">
+      <li>In Beam: <span class="path">Settings → Network Sharing → Web Dashboard</span> → on.</li>
+      <li>Beam shows a network address (ending in <span class="kbd">/Beam</span>). Open it in any browser on the same network.</li>
+    </ol>
+    <div class="note"><span class="tag">Note</span> &nbsp;The dashboard can control playback, send titles to the TV and mark them watched — <b>never</b> your settings, accounts or files.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><h2 style="font-size:clamp(1.5rem,3vw,1.9rem)">Once you're set up</h2></div>
+    <div class="grid4">
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3Z"/></svg></div><h3>Kids Mode</h3><p>Long-press a title → "Show in Kids", then flip Kids Mode on for a safe, hand-picked library.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2M4 12h16"/></svg></div><h3>Analyze Media Specs</h3><p>Settings → Library. Reads real codec, HDR/Dolby Vision and audio for each local file.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><h3>Match Frame Rate</h3><p>Settings → Playback. Switches the TV to the film's native rate to kill judder.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></div><h3>External players</h3><p>Settings → External Players. Long-press a title to hand it to VLC, MX or Just Player.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="closer">
+  <div class="wrap">
+    <h2>That's the whole setup.</h2>
+    <p>Keys in, storage connected, scan run. From here it's just posters and a remote.</p>
+    <a class="btn" href="index.html">Back to overview</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 100 100"><polygon points="35,25 78,50 35,75" fill="#7EA6FF"/></svg></span>Beam</a>
+    <div class="fnav">
+      <a href="index.html">Overview</a>
+      <a href="#metadata">Metadata</a>
+      <a href="#mega">Mega</a>
+      <a href="#seedbox">Seedbox</a>
+      <a href="#drives">Drives</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="copy">© 2026 Beam · Your media, one Android TV library</div>
+  </div>
+</footer>
+
+</body>
+</html>
