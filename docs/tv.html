@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="has-subnav">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beam for Android TV — sources, screens, player and engine</title>
+<meta name="description" content="Beam for Android TV: Mega, seedbox and USB drives in one native Leanback library, title pages with logos, Kids Mode, raw playback, a browser dashboard and a Kodi media server.">
+<meta name="theme-color" content="#0B0D12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Beam for Android TV — sources, screens, player and engine">
+<meta property="og:description" content="Beam for Android TV: Mega, seedbox and USB drives in one native Leanback library, title pages with logos, Kids Mode, raw playback, a browser dashboard and a Kodi media server.">
+<meta property="og:url" content="https://jk-hosting.github.io/Beam-TV-App/tv.html">
+<meta property="og:image" content="https://jk-hosting.github.io/Beam-TV-App/screenshots/hub-v4.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beam for Android TV — sources, screens, player and engine">
+<meta name="twitter:description" content="Beam for Android TV: Mega, seedbox and USB drives in one native Leanback library, title pages with logos, Kids Mode, raw playback, a browser dashboard and a Kodi media server.">
+<meta name="twitter:image" content="https://jk-hosting.github.io/Beam-TV-App/screenshots/hub-v4.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231A1A1A'/><polygon points='35,25 78,50 35,75' fill='%237EA6FF'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body id="top">
+
+<div class="appbar">
+  <span class="lbl">More apps</span>
+  <a href="https://jk-hosting.github.io/BoulderLog-App/">BoulderLog<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a href="https://jk-hosting.github.io/BoulderTrain-App/">BoulderTrain<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a href="https://jk-hosting.github.io/BoulderHang-App/">BoulderHang<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a href="https://jk-hosting.github.io/CoffeeAeye-App/">Coffee Aeye<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a href="https://jk-hosting.github.io/Glide-App/">Glide<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+</div>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 100 100"><polygon points="35,25 78,50 35,75" fill="#7EA6FF"/></svg></span>Beam</a>
+    <div class="navlinks" id="navlinks">
+      <a href="tv.html" aria-current="page">Beam TV</a>
+      <a href="mobile.html">Mobile</a>
+      <a href="receiver.html">Receiver</a>
+      <a href="setup.html">Setup</a>
+      <a class="menu-cta" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+    </div>
+    <a class="btn small nav-cta" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</nav>
+
+<header class="phero">
+  <div class="wrap">
+    <span class="eyebrow">Beam · Android TV</span>
+    <h1>Everything you own, <span class="accent">one native library.</span></h1>
+    <p class="lead">Mega, any HTTPS seedbox and USB drives in one Leanback library, streamed raw to the decoder. Here's every screen, the player and the engine underneath.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+      <a class="btn-ghost" href="setup.html">Setup guide</a>
+    </div>
+  </div>
+</header>
+
+<div class="subnav" aria-label="On this page">
+  <div class="wrap">
+    <a href="#sources">Sources</a>
+    <a href="#experience">Library</a>
+    <a href="#title-pages">Title pages</a>
+    <a href="#kids">Kids</a>
+    <a href="#playback">Playback</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#sharing">Kodi</a>
+    <a href="#engine">Engine</a>
+  </div>
+</div>
+
+<section id="sources">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <span class="eyebrow">Sources</span>
+        <h2>Three libraries, one chooser</h2>
+        <p class="muted">Each source is its own library with its own artwork, stats and hub. They stack into a chooser — and Beam reopens the one you used last.</p>
+        <div class="sub">
+          <div class="item"><span class="dot"></span><span><b>Mega.</b> Sign in once; your cloud becomes a poster wall. An embedded engine serves files directly — nothing downloads first.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Seedbox (HTTPS).</b> Point Beam at any HTTPS file server for a second cloud library with its own isolated engine — a misbehaving box never touches Mega playback.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Local drives.</b> USB and internal storage with per-drive Movies/TV assignment. Incremental scans; detached drives are remembered and flagged, not forgotten.</span></div>
+        </div>
+      </div>
+      <div class="screens">
+        <div class="screen"><img src="screenshots/chooser-v2.png" alt="Source chooser — Mega, seedbox, local drives and Kids"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Experience</span>
+      <h2>Built for the couch</h2>
+      <p>Every screen designed and battle-tested for D-pad navigation on a Leanback launcher, in Jetpack Compose for TV.</p>
+    </div>
+    <div class="grid4">
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><h3>A real TV hub</h3><p>A cinematic hero with the title's logo mirrors the focused rail, over Continue Watching and Up Next cards that carry each title's logo, and per-launch shuffled Suggestions.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 4v5M17 4v5"/></svg></div><h3>Rich metadata</h3><p>Posters, backdrops, title logos, ratings and awards from TMDB, TheTVDB and OMDb, cached on-device with a configurable 256 MB–1 GB image cache.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>Instant search</h3><p>Search every movie and show across your whole library as you type.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg></div><h3>Tap the cast</h3><p>Select any actor on a detail page and see everything else they appear in across your shelves.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M3 13l9 5 9-5"/></svg></div><h3>Franchise &amp; director rails</h3><p>A film's page gathers the rest of its collection and more from the same director — from your own library.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h8M4 12h6M4 17h4"/><path d="M17 5v14M17 19l3-3M17 19l-3-3"/></svg></div><h3>A–Z quick jump</h3><p>Flick past the last poster and an alphabet strip fades in; jump by letter and focus lands ready to play.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></div><h3>Resume everywhere</h3><p>Every play action, from any rail or grid, picks up exactly where you stopped.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6v5h5v6h-5v5H9v-5H4V9h5V4Z"/></svg></div><h3>D-pad first</h3><p>No touch shortcuts, no phone habits — designed for a remote from the first frame.</p></div>
+    </div>
+    <div class="split" style="margin-top:44px">
+      <div class="screens"><div class="screen"><img src="screenshots/grid-v4.png" alt="Movie library grid with the A–Z quick-jump strip"></div></div>
+      <div class="txt">
+        <span class="eyebrow">The library</span>
+        <h2>Your whole shelf, one wall</h2>
+        <p class="muted">Posters from every drive and cloud, pooled into one grid. Big libraries get the alphabet strip; every title one press from playing, resuming or its detail page.</p>
+      </div>
+    </div>
+    <div class="split" id="title-pages" style="margin-top:44px">
+      <div class="txt">
+        <span class="eyebrow">Title pages</span>
+        <h2>Every title, its own logo</h2>
+        <p class="muted">Movies and shows open on their title logo over full-width backdrop art, the way streaming services present them. The logo is cached on the box, and the plain title shows if a film has no logo.</p>
+        <div class="sub">
+          <div class="item"><span class="dot"></span><span><b>Everything at a glance.</b> Year and runtime, TMDB, IMDb and Metacritic scores, the age rating, the file's quality, genres and a three-line overview that opens in full.</span></div>
+          <div class="item"><span class="dot"></span><span><b>One look everywhere.</b> The same logos appear on the hub, in Beam Mobile and in the web dashboard.</span></div>
+        </div>
+      </div>
+      <div class="screens"><div class="screen"><img src="screenshots/detail-v1.png" alt="Movie title page — the title logo over a full-width backdrop, with ratings, actions, genres and the cast row" loading="lazy"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="kids" class="kids-band">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <span class="eyebrow kids">Kids Mode</span>
+        <h2>A library just for them</h2>
+        <p class="muted">One switch turns on a hand-picked kids' library. Long-press titles to add them; while it's on, they leave the grown-up library entirely.</p>
+        <div class="sub kids">
+          <div class="item"><span class="dot"></span><span><b>Their own front door.</b> A Kids tile opens a bright hub of big cards — Keep Watching plus their movies and shows, pooled from every source with no source concept at all.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Nothing to wander into.</b> No settings, no menus, no long-press actions, no adult rails; Back only leads to the chooser.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Zero trace when off.</b> Flip it off and the app looks exactly as before, and every pick is remembered for next time.</span></div>
+        </div>
+      </div>
+      <div class="screens"><div class="screen"><img src="screenshots/kids-v1.png" alt="The Kids hub — Keep Watching, Movies and TV Shows rails of big picture cards"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="playback">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="txt">
+        <span class="eyebrow">Playback</span>
+        <h2>Playback that respects the source</h2>
+        <p class="muted">Original bytes to the decoder, tuned to hold on hardware as old as the 2015 NVIDIA SHIELD.</p>
+        <div class="sub">
+          <div class="item"><span class="dot"></span><span><b>Match Frame Rate</b> switches the TV to the film's native rate to kill judder.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Tunneled playback</b> — hardware A/V sync for high-bitrate 4K/HDR.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Auto-play next episode</b> with an Up Next card near the end: OK plays now, Back cancels.</span></div>
+          <div class="item"><span class="dot"></span><span><b>External player handoff</b> to VLC, MX or Just Player — a foreground service keeps the engine alive while they play.</span></div>
+        </div>
+      </div>
+      <div class="screens"><div class="screen"><img src="screenshots/player-v3.png" alt="Player with the live stats overlay — codec, fps, bitrate and engine RAM"></div></div>
+    </div>
+    <div class="grid3" style="margin-top:56px">
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><h3>Live stats overlay</h3><p>Codec, content fps vs display Hz, dropped frames, live stream bitrate and how much RAM runway the engine holds — refreshed every second.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2M4 12h16"/></svg></div><h3>Analyze media specs</h3><p>An on-device probe reads each file's real codec, resolution, HDR type and audio — down to Dolby Vision profile strings (<code>dvhe.07.06</code>), HDR10 and TrueHD Atmos.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/></svg></div><h3>Display control</h3><p>Pin the whole app UI to a chosen refresh rate, or leave it to the system.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="dashboard">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <span class="eyebrow">Dashboard</span>
+        <h2>The whole box, in any browser</h2>
+        <p class="muted">Flip one toggle and Beam serves a live dashboard straight from the TV box — open it on any phone or laptop on your network. No cloud, no account, nothing to install.</p>
+        <div class="sub">
+          <div class="item"><span class="dot"></span><span><b>A real remote.</b> Play/pause, ±30 s, tap-to-seek, episode skip and audio/subtitle switching for whatever is on the TV.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Fling anything.</b> Tap <b>▶ TV</b> to start a title on the big screen, or <b>▶ here</b> to stream it to the device in your hand.</span></div>
+          <div class="item"><span class="dot"></span><span><b>An app-style Home.</b> It opens on a hero with the title's logo, Continue watching and Next up cards, and top-rated and genre rows, the same look as the TV and the phone.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Your library, sliceable.</b> Search; Movies / TV / Kids; 4K, Dolby Vision and HDR10 facets; genre, decade and rating filters; sortable spec columns; per-season drill-downs — and a <b>Surprise me</b> button.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Live telemetry.</b> Stream and buffer sparklines, engine RAM, thermals, per-process CPU, active DLNA relays — and free while no browser is looking.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Safe by design.</b> The page drives playback and watch state, nothing else; settings and accounts never leave the TV.</span></div>
+        </div>
+      </div>
+      <div class="screens">
+        <div class="screen"><img src="screenshots/dashboard-v1.png" alt="Web dashboard — live playback and device telemetry"></div>
+        <div class="screen"><img src="screenshots/dashboard-home-v1.png" alt="Web dashboard — app-style Home with a title-logo hero, Continue watching and Next up cards"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sharing" class="band">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Sharing</span>
+      <h2>A media server for Kodi</h2>
+      <p>One toggle publishes the whole library — movies and TV with covers and titles — as a UPnP/DLNA media server. Kodi or any UPnP client browses Beam and direct-plays from Mega, your seedbox and local drives, with Beam's engines relaying the original bytes. Survives reboots until you switch it off.</p>
+    </div>
+  </div>
+</section>
+
+<section id="engine">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Engine</span>
+      <h2>Under the hood</h2>
+      <p>Every source looks identical to the decoder, profiled on real hardware until cold starts, seeks and steady-state all held up.</p>
+    </div>
+    <div class="grid4">
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 2v3M14 2v3M10 19v3M14 19v3M2 10h3M2 14h3M19 10h3M19 14h3"/></svg></div><h3>Embedded engine</h3><p>Runs as a local server; the player streams from <code>127.0.0.1</code>, so cloud, seedbox and USB all look identical to the decoder.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="10" rx="2"/><path d="M8 8V6M12 8V6M16 8V6M8 18v2M12 18v2M16 18v2"/></svg></div><h3>Tuned RAM read-ahead</h3><p>A 128 MB player buffer over hundreds of MB of engine read-ahead, profiled until a memory-constrained 2015 SHIELD held smooth.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7 4 7-4"/></svg></div><h3>Dual engines</h3><p>A tuned stable engine by default, with a one-toggle experimental engine for A/B testing on your own device.</p></div>
+      <div class="fcard"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><h3>Room-backed catalog</h3><p>Library, watch state and specs in a relational store; the app starts from cache instantly and scans refresh incrementally.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="closer" id="price">
+  <div class="wrap">
+    <div class="price">
+      <span class="eyebrow">One price · all three apps</span>
+      <h2>€12.99, once.</h2>
+      <p>No subscription. Beam for Android TV, with Beam Mobile and Beam Receiver included at no extra cost.</p>
+      <ul class="incl">
+        <li><b>Beam</b>Android TV</li>
+        <li><b>Beam Mobile</b>Phones &amp; tablets</li>
+        <li><b>Beam Receiver</b>Any Android TV</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+        <a class="btn-ghost" href="setup.html">See the setup guide</a>
+      </div>
+      <div class="cta-note">One-time purchase · Instant access · Invoice included</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 100 100"><polygon points="35,25 78,50 35,75" fill="#7EA6FF"/></svg></span>Beam</a>
+    <div class="fnav">
+      <a href="tv.html">Beam TV</a>
+      <a href="mobile.html">Mobile</a>
+      <a href="receiver.html">Receiver</a>
+      <a href="setup.html">Setup</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="disc">Screens shown are design renders of the apps' actual UI layouts (Beam, Beam Mobile and Beam Receiver); the dashboard screens are the real page fed simulated data. Poster artwork, stills and titles are public-domain classic films and TV via Wikimedia Commons; the title logos are original lettering made for these renders, standing in for the logos the apps fetch; the Kids screen uses original artwork and invented titles. Device names in the Cast list are examples.</div>
+    <div class="copy">© 2026 Beam · Your media, one Android TV library</div>
+  </div>
+</footer>
+
+<a class="totop" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+<script src="site.js"></script>
+</body>
+</html>

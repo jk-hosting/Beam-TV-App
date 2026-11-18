@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beam Receiver — cast to any Android TV</title>
+<meta name="description" content="Beam Receiver: a light app that turns any Android TV into a cast target for Beam Mobile, with Beam's player, Dolby Vision fallback and audio passthrough. Included with Beam.">
+<meta name="theme-color" content="#0B0D12">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Beam Receiver — cast to any Android TV">
+<meta property="og:description" content="Beam Receiver: a light app that turns any Android TV into a cast target for Beam Mobile, with Beam's player, Dolby Vision fallback and audio passthrough. Included with Beam.">
+<meta property="og:url" content="https://jk-hosting.github.io/Beam-TV-App/receiver.html">
+<meta property="og:image" content="https://jk-hosting.github.io/Beam-TV-App/screenshots/receiver-player-v1.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beam Receiver — cast to any Android TV">
+<meta name="twitter:description" content="Beam Receiver: a light app that turns any Android TV into a cast target for Beam Mobile, with Beam's player, Dolby Vision fallback and audio passthrough. Included with Beam.">
+<meta name="twitter:image" content="https://jk-hosting.github.io/Beam-TV-App/screenshots/receiver-player-v1.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231A1A1A'/><polygon points='35,25 78,50 35,75' fill='%237EA6FF'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body id="top">
+
+<div class="appbar">
+  <span class="lbl">More apps</span>
+  <a href="https://jk-hosting.github.io/BoulderLog-App/">BoulderLog<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a href="https://jk-hosting.github.io/BoulderTrain-App/">BoulderTrain<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a href="https://jk-hosting.github.io/BoulderHang-App/">BoulderHang<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a href="https://jk-hosting.github.io/CoffeeAeye-App/">Coffee Aeye<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  <a href="https://jk-hosting.github.io/Glide-App/">Glide<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+</div>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 100 100"><polygon points="35,25 78,50 35,75" fill="#7EA6FF"/></svg></span>Beam</a>
+    <div class="navlinks" id="navlinks">
+      <a href="tv.html">Beam TV</a>
+      <a href="mobile.html">Mobile</a>
+      <a href="receiver.html" aria-current="page">Receiver</a>
+      <a href="setup.html">Setup</a>
+      <a class="menu-cta" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+    </div>
+    <a class="btn small nav-cta" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</nav>
+
+<header class="phero">
+  <div class="wrap">
+    <span class="eyebrow">Beam Receiver · Android TV · included with Beam</span>
+    <h1>Any Android TV, <span class="accent">ready to cast to.</span></h1>
+    <p class="lead">A small standalone app for Android TV, Google TV and NVIDIA SHIELD. Install it once and the TV appears in Beam Mobile's Cast list. Your phone's downloads then play on the big screen through Beam's own player.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+      <a class="btn-ghost" href="#setup">Set it up</a>
+    </div>
+  </div>
+</header>
+
+<section id="receiver" class="first">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="txt">
+        <span class="eyebrow">What it does</span>
+        <h2>Beam's player, on any TV</h2>
+        <div class="sub">
+          <div class="item"><span class="dot"></span><span><b>Shows up by itself.</b> Answers network discovery as "Living Room TV (Beam)", so it is never mistaken for the TV's built-in receiver, and rejoins after Wi-Fi or Ethernet changes.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Always ready.</b> Runs quietly from boot. A video sent while the TV sleeps wakes the screen and opens over whatever is on; Back returns you to it.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Beam's picture pipeline.</b> Dolby Vision profile 7 remuxes fall back to their HDR10 base layer instead of a black screen. HDR switches on even when a file's colour tags are missing, and a 128 MB buffer rides out Wi-Fi dips at remux bitrates.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Sound stays intact.</b> Audio passes through to your AV receiver or soundbar as the TV allows. There's no refresh-rate switching, so no HDMI resync drops the sound at the start, and DTS and TrueHD can be decoded on the TV as a backup.</span></div>
+          <div class="item"><span class="dot"></span><span><b>Controls you know.</b> Beam's player look: title, spec chips, a timebar, −5/+15 s, subtitles and audio tracks. The phone's remote bar drives it too: play, pause, seek and stop.</span></div>
+        </div>
+      </div>
+      <div class="rx-screens">
+        <figure><div class="screen"><img src="screenshots/receiver-player-v1.png" alt="Beam Receiver playing a cast — title, 4K / HDR10 fallback / HEVC / 23.976 / TrueHD 7.1 chips, timebar and controls" loading="lazy"></div></figure>
+        <div class="pair">
+          <figure><div class="screen"><img src="screenshots/receiver-loading-v1.png" alt="Beam Receiver loading card — poster, title and progress" loading="lazy"></div><figcaption>Poster card while it loads</figcaption></figure>
+          <figure><div class="screen"><img src="screenshots/receiver-ready-v1.png" alt="Beam Receiver ready screen — TV name, address and Start with TV" loading="lazy"></div><figcaption>Ready screen: name, address, start with TV</figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <div class="chips">
+      <span class="chip hot">Android 8+ TV</span>
+      <span class="chip">UPnP / DLNA renderer</span>
+      <span class="chip">Starts with the TV</span>
+      <span class="chip">Dolby Vision P7 → HDR10</span>
+      <span class="chip">Audio passthrough</span>
+      <span class="chip">No account, no library to set up</span>
+    </div>
+  </div>
+</section>
+
+<section id="setup" class="band">
+  <div class="wrap narrow">
+    <div class="section-head">
+      <span class="eyebrow">Setup</span>
+      <h2>Ready in a minute</h2>
+      <p>Optional. It lets an Android TV play downloads cast from Beam Mobile. It doesn't need Beam on that TV, an account or a library.</p>
+    </div>
+    <ol class="steps-list">
+      <li>Install Beam Receiver on the TV and open it once. It shows <b>Ready to play from Beam Mobile</b>, with the name phones will see and the TV's address.</li>
+      <li>Leave <b>Start with TV: On</b> so the receiver is ready after every restart.</li>
+      <li>On Android 10 or newer, allow <b>Display over other apps</b> so videos can open while another app is on screen. The ready screen has the button. If this TV hides the setting, the ready screen also shows a one-line adb command that grants it.</li>
+      <li>In Beam Mobile, open a downloaded title, tap <b>Cast</b> and choose <b>"&lt;TV name&gt; (Beam)"</b>.</li>
+    </ol>
+    <div class="note"><span class="tag">Note</span> &nbsp;Back or Stop closes the player and returns the TV to whatever was on before.</div>
+    <a class="more" style="display:inline-block" href="setup.html#receiver">Full setup guide →</a>
+  </div>
+</section>
+
+<section class="closer" id="price">
+  <div class="wrap">
+    <div class="price">
+      <span class="eyebrow">One price · all three apps</span>
+      <h2>€12.99, once.</h2>
+      <p>No subscription. Beam for Android TV, with Beam Mobile and Beam Receiver included at no extra cost.</p>
+      <ul class="incl">
+        <li><b>Beam</b>Android TV</li>
+        <li><b>Beam Mobile</b>Phones &amp; tablets</li>
+        <li><b>Beam Receiver</b>Any Android TV</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+        <a class="btn-ghost" href="setup.html">See the setup guide</a>
+      </div>
+      <div class="cta-note">One-time purchase · Instant access · Invoice included</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 100 100"><polygon points="35,25 78,50 35,75" fill="#7EA6FF"/></svg></span>Beam</a>
+    <div class="fnav">
+      <a href="tv.html">Beam TV</a>
+      <a href="mobile.html">Mobile</a>
+      <a href="receiver.html">Receiver</a>
+      <a href="setup.html">Setup</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="disc">Screens shown are design renders of the apps' actual UI layouts (Beam, Beam Mobile and Beam Receiver); the dashboard screens are the real page fed simulated data. Poster artwork, stills and titles are public-domain classic films and TV via Wikimedia Commons; the title logos are original lettering made for these renders, standing in for the logos the apps fetch; the Kids screen uses original artwork and invented titles. Device names in the Cast list are examples.</div>
+    <div class="copy">© 2026 Beam · Your media, one Android TV library</div>
+  </div>
+</footer>
+
+<a class="totop" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-subnav">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 <style>
 :root{
   --bg:#0B0D12; --bg2:#0F131B; --card:#12151C; --card2:#171B26;
@@ -147,7 +148,7 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
 }
 </style>
 </head>
-<body>
+<body id="top">
 
 <div class="appbar">
   <span class="lbl">More apps</span>
@@ -161,17 +162,15 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
 <nav>
   <div class="wrap">
     <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 100 100"><polygon points="35,25 78,50 35,75" fill="#7EA6FF"/></svg></span>Beam</a>
-    <div class="navlinks">
-      <a href="index.html">Overview</a>
-      <a href="#metadata">Metadata</a>
-      <a href="#mega">Mega</a>
-      <a href="#seedbox">Seedbox</a>
-      <a href="#drives">Drives</a>
-      <a href="#sharing">Sharing</a>
-      <a href="#mobile">Mobile</a>
-      <a href="#receiver">Receiver</a>
+    <div class="navlinks" id="navlinks">
+      <a href="tv.html">Beam TV</a>
+      <a href="mobile.html">Mobile</a>
+      <a href="receiver.html">Receiver</a>
+      <a href="setup.html" aria-current="page">Setup</a>
+      <a class="menu-cta" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
     </div>
     <a class="btn small nav-cta" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-controls="navlinks" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
 </nav>
 
@@ -213,12 +212,24 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
   </div>
 </header>
 
+<div class="subnav" aria-label="On this page">
+  <div class="wrap narrow">
+    <a href="#metadata">Metadata</a>
+    <a href="#mega">Mega</a>
+    <a href="#seedbox">Seedbox</a>
+    <a href="#drives">Drives</a>
+    <a href="#sharing">Kodi &amp; browser</a>
+    <a href="#mobile">Beam Mobile</a>
+    <a href="#receiver">Beam Receiver</a>
+  </div>
+</div>
+
 <section id="metadata">
   <div class="wrap narrow">
-    <div class="shead">
+    <details class="acc" open><summary class="shead">
       <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 4v5M17 4v5"/></svg></span>
       <h2>Metadata keys</h2>
-    </div>
+    </summary>
     <p class="sub-lead">Two free keys turn bare file names into a poster wall with ratings. Get them once, paste them in, and every scan uses them.</p>
 
     <div class="subhead">TMDB — posters &amp; details</div>
@@ -237,15 +248,16 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
       <li>In Beam: <span class="path">Settings → Metadata → OMDb API Key</span> → paste it and save.</li>
     </ol>
     <div class="note"><span class="tag">Note</span> &nbsp;Optional. It adds IMDb / Rotten Tomatoes / Metacritic scores and awards, fetched while a scan runs.</div>
+    </details>
   </div>
 </section>
 
 <section id="mega">
   <div class="wrap narrow">
-    <div class="shead">
+    <details class="acc"><summary class="shead">
       <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.3A3.5 3.5 0 0 1 18 18H7Z"/></svg></span>
       <h2>Mega (S4 object storage)</h2>
-    </div>
+    </summary>
     <p class="sub-lead">Beam streams Mega through <b>Mega S4</b> — Mega's S3-compatible object storage — not a normal MEGA Drive folder. You keep your media in an S4 bucket and sign in with a key pair.</p>
     <div class="note warn"><span class="tag">Important</span> &nbsp;Your everyday MEGA email and password will <b>not</b> work here. Beam needs an <b>S4 Access Key</b> and <b>Secret Key</b> from Mega's Object Storage (S4) console.</div>
     <ol class="steps-list">
@@ -255,15 +267,16 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
       <li>In Beam: <span class="path">Settings → Cloud → Mega → Sign in</span>, then paste the <b>S4 Access Key</b> and <b>S4 Secret Key</b>.</li>
     </ol>
     <div class="note"><span class="tag">Note</span> &nbsp;Once signed in, your Mega library appears as its own poster wall. Files are streamed directly — nothing is downloaded first. Run a scan (or reopen the library) to pull artwork.</div>
+    </details>
   </div>
 </section>
 
 <section id="seedbox">
   <div class="wrap narrow">
-    <div class="shead">
+    <details class="acc"><summary class="shead">
       <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 7.5h.01M8 16.5h.01"/></svg></span>
       <h2>Seedbox (HTTPS)</h2>
-    </div>
+    </summary>
     <p class="sub-lead">Any file server that lists a folder over HTTPS becomes a second cloud library, on its own isolated engine — a misbehaving box can never touch Mega playback.</p>
     <ol class="steps-list">
       <li>Make sure your seedbox serves your media over <b>HTTPS</b> with a browsable directory listing, protected by a username and password.</li>
@@ -272,15 +285,16 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
       <li><b>Relaunch Beam.</b> The seedbox appears as its own library alongside Mega and Local.</li>
     </ol>
     <div class="note"><span class="tag">Note</span> &nbsp;Seedbox changes apply at the next app launch. If titles look bare, open the library once so a scan can fetch artwork with your TMDB key.</div>
+    </details>
   </div>
 </section>
 
 <section id="drives">
   <div class="wrap narrow">
-    <div class="shead">
+    <details class="acc"><summary class="shead">
       <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="18" height="8" rx="2"/><path d="M3 12l3-7h12l3 7M8 16h.01M12 16h6"/></svg></span>
       <h2>Local drives (USB / SD)</h2>
-    </div>
+    </summary>
     <p class="sub-lead">Plug storage straight into the TV box. You tell Beam which folders hold Movies and TV Shows, and only those are scanned.</p>
     <ol class="steps-list">
       <li>Plug a <b>USB stick or SD card</b> into the Android TV box.</li>
@@ -289,15 +303,16 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
       <li>Tap <b>Scan Library</b> to build the library and fetch artwork.</li>
     </ol>
     <div class="note"><span class="tag">Note</span> &nbsp;Unplug a drive and its titles are <b>kept and flagged</b>, not deleted — plug it back in and they return. Remove a drive in Settings to drop its titles for good.</div>
+    </details>
   </div>
 </section>
 
 <section id="sharing">
   <div class="wrap narrow">
-    <div class="shead">
+    <details class="acc"><summary class="shead">
       <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.8a16 16 0 0 1 20 0"/><path d="M5 12.3a11 11 0 0 1 14 0"/><path d="M8.5 15.8a6 6 0 0 1 7 0"/><path d="M12 19.5h.01"/></svg></span>
       <h2>Share to Kodi &amp; your browser</h2>
-    </div>
+    </summary>
     <p class="sub-lead">Optional. One toggle each — both stay on across reboots until you switch them off.</p>
 
     <div class="subhead">Media Server for Kodi (UPnP)</div>
@@ -312,15 +327,16 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
       <li>Beam shows a network address (ending in <span class="kbd">/Beam</span>). Open it in any browser on the same network.</li>
     </ol>
     <div class="note"><span class="tag">Note</span> &nbsp;The dashboard can control playback, send titles to the TV and mark them watched — <b>never</b> your settings, accounts or files.</div>
+    </details>
   </div>
 </section>
 
 <section id="mobile">
   <div class="wrap narrow">
-    <div class="shead">
+    <details class="acc"><summary class="shead">
       <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>
       <h2>Beam Mobile (phone &amp; tablet)</h2>
-    </div>
+    </summary>
     <p class="sub-lead">Optional. Beam Mobile reads the library from Beam on your TV, so the TV does the setup and the phone just connects. Android 8 or newer, on the same Wi-Fi as the TV.</p>
     <ol class="steps-list">
       <li>On the TV, in Beam: <span class="path">Settings → Network Sharing → Web Dashboard</span> → on. This gives the phone the library, the remote and watched sync.</li>
@@ -329,15 +345,16 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
       <li>Optional: <span class="path">Settings → Casting → Cast to TVs</span> adds <b>Cast</b> to downloaded titles. <b>Convert audio</b> and <b>Convert video</b> help older Chromecasts.</li>
     </ol>
     <div class="note"><span class="tag">Note</span> &nbsp;<span class="path">Settings → Kids Mode</span> on the phone adds a "Who's watching?" screen. The Kids profile shows the titles picked for Kids on the TV; picking stays on the TV.</div>
+    </details>
   </div>
 </section>
 
 <section id="receiver">
   <div class="wrap narrow">
-    <div class="shead">
+    <details class="acc"><summary class="shead">
       <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><path d="M2 12a9 9 0 0 1 8 8M2 16a5 5 0 0 1 4 4M2 20h.01"/></svg></span>
       <h2>Beam Receiver (any Android TV)</h2>
-    </div>
+    </summary>
     <p class="sub-lead">Optional. It lets an Android TV play downloads cast from Beam Mobile. It doesn't need Beam on that TV, an account or a library.</p>
     <ol class="steps-list">
       <li>Install Beam Receiver on the TV and open it once. It shows <b>Ready to play from Beam Mobile</b>, with the name phones will see and the TV's address.</li>
@@ -346,6 +363,7 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
       <li>In Beam Mobile, open a downloaded title, tap <b>Cast</b> and choose <b>"&lt;TV name&gt; (Beam)"</b>.</li>
     </ol>
     <div class="note"><span class="tag">Note</span> &nbsp;Back or Stop closes the player and returns the TV to whatever was on before.</div>
+    </details>
   </div>
 </section>
 
@@ -373,17 +391,19 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
   <div class="wrap">
     <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 100 100"><polygon points="35,25 78,50 35,75" fill="#7EA6FF"/></svg></span>Beam</a>
     <div class="fnav">
-      <a href="index.html">Overview</a>
-      <a href="#metadata">Metadata</a>
-      <a href="#mega">Mega</a>
-      <a href="#seedbox">Seedbox</a>
-      <a href="#drives">Drives</a>
+      <a href="tv.html">Beam TV</a>
+      <a href="mobile.html">Mobile</a>
+      <a href="receiver.html">Receiver</a>
+      <a href="setup.html">Setup</a>
       <a href="terms.html">Terms</a>
       <a href="privacy.html">Privacy</a>
     </div>
+    <div class="disc">Screens shown are design renders of the apps' actual UI layouts (Beam, Beam Mobile and Beam Receiver); the dashboard screens are the real page fed simulated data. Poster artwork, stills and titles are public-domain classic films and TV via Wikimedia Commons; the title logos are original lettering made for these renders, standing in for the logos the apps fetch; the Kids screen uses original artwork and invented titles. Device names in the Cast list are examples.</div>
     <div class="copy">© 2026 Beam · Your media, one Android TV library</div>
   </div>
 </footer>
 
+<a class="totop" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+<script src="site.js"></script>
 </body>
 </html>
