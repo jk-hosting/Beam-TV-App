@@ -15,7 +15,7 @@ Beam turns an Android TV box into a direct line to your own media, wherever it l
 
 Two companion apps extend it. **[Beam Mobile](#beam-mobile)** puts the library on your phone or tablet: browse, play, send to the TV, download and cast. **[Beam Receiver](#beam-receiver)** turns any Android TV into a cast target for those downloads.
 
-<p align="center"><img src="docs/screenshots/hub-v3.png" width="92%" alt="Beam home hub" /></p>
+<p align="center"><img src="docs/screenshots/hub-v4.png" width="92%" alt="Beam home hub" /></p>
 
 ## <img src="https://img.shields.io/badge/SOURCES-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Three libraries, one chooser
 
@@ -31,8 +31,9 @@ Each source is its own library with its own artwork, stats, and hub. Extra strea
 
 ## <img src="https://img.shields.io/badge/EXPERIENCE-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Built for the couch
 
-- **A real TV hub** — a static cinematic hero that mirrors whatever rail item has focus, above **Continue Watching**, **Up Next**, and per-launch shuffled **Suggestions** rails.
-- **TMDB + OMDb metadata** — posters, backdrops, ratings, and awards, cached on-device with a configurable image cache (256 MB – 1 GB).
+- **A real TV hub** — a cinematic hero with the title's logo that mirrors whatever rail item has focus, above **Continue Watching** and **Up Next** cards that carry each title's logo, and per-launch shuffled **Suggestions** rails.
+- **Rich metadata** — posters, backdrops, title logos, ratings, and awards from TMDB, TheTVDB, and OMDb, cached on-device with a configurable image cache (256 MB – 1 GB).
+- **Title pages with their own logo** — movies and shows open on their title logo over full-width backdrop art, with TMDB, IMDb, and Metacritic scores, the age rating, file quality, genres, and a three-line overview that opens in full. The plain title shows if a film has no logo, and the same logos appear on the hub, in Beam Mobile, and in the web dashboard.
 - **Instant library search** across movies and shows.
 - **Tap the cast** — select any actor on a detail page and see everything else they appear in across your library.
 - **Franchise & director rails** — a movie's page gathers the rest of its collection and more from the same director, straight from your own shelves.
@@ -41,6 +42,7 @@ Each source is its own library with its own artwork, stats, and hub. Extra strea
 - **D-pad first** — every screen designed and battle-tested for remote navigation on a Leanback launcher, in Jetpack Compose for TV.
 
 <p align="center"><img src="docs/screenshots/grid-v4.png" width="92%" alt="Movie library grid" /></p>
+<p align="center"><img src="docs/screenshots/detail-v1.png" width="92%" alt="Movie title page with its title logo" /></p>
 
 ## <img src="https://img.shields.io/badge/KIDS%20MODE-FFB84D?style=for-the-badge&labelColor=1A1A1A" height="26"/> A library just for them
 
@@ -68,13 +70,14 @@ Flip one toggle and Beam serves a live dashboard straight from the TV box — op
 
 - **A real remote** — play/pause, ±30 s, tap-to-seek, episode skip, and audio/subtitle track switching for whatever is on the TV right now.
 - **Fling anything to the TV** — find a title in the browser, tap **▶ TV**, and it starts on the big screen. Tap **▶ here** and it streams to the device in your hand instead.
+- **An app-style Home** — the Library tab opens on a hero with the title's logo, **Continue watching** and **Next up** cards, and top-rated and genre rows: the same look as the TV and the phone.
 - **Your library, sliceable** — instant search; Movies / TV / Kids; 4K, Dolby Vision, and HDR10 facets; genre, decade, and rating filters; sortable spec columns; a poster wall; per-season episode drill-downs; watched toggles; library rescans — and a **Surprise me** button for when nobody can decide.
 - **Watch history** — every play with its resume state, one tap to send it back to the TV.
 - **Live telemetry for the curious** — stream and buffer sparklines, engine RAM meters, device thermals, per-process CPU, active DLNA relays — refreshed every second, and costing nothing while no browser is looking.
 - **Safe by design** — the page can drive playback and watch state, nothing else: settings and accounts never leave the TV.
 
 <p align="center"><img src="docs/screenshots/dashboard-v1.png" width="92%" alt="Web dashboard — live playback and device stats" /></p>
-<p align="center"><img src="docs/screenshots/dashboard-library-v1.png" width="92%" alt="Web dashboard — library browser with facets and filters" /></p>
+<p align="center"><img src="docs/screenshots/dashboard-home-v1.png" width="92%" alt="Web dashboard — app-style Home with a title-logo hero, Continue watching and Next up cards" /></p>
 
 <a id="beam-mobile"></a>
 ## <img src="https://img.shields.io/badge/BEAM%20MOBILE-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Your library, in your pocket
@@ -82,8 +85,8 @@ Flip one toggle and Beam serves a live dashboard straight from the TV box — op
 A phone and tablet app (Android 8+) built on Beam on your TV. Same library, same artwork, same watch history: browse it from the sofa, play it on the phone, send it to the big screen or take it with you. It talks only to your TV over your home network, with no account, no cloud, and no keys or passwords stored on the phone.
 
 <table><tr>
-<td width="25%" align="center" valign="top"><img src="docs/screenshots/mobile-home-v1.png" alt="Beam Mobile home with the TV remote bar" /><br/><sub>Home, with the TV's remote bar</sub></td>
-<td width="25%" align="center" valign="top"><img src="docs/screenshots/mobile-detail-v1.png" alt="Beam Mobile movie page" /><br/><sub>Play here, or on the TV</sub></td>
+<td width="25%" align="center" valign="top"><img src="docs/screenshots/mobile-home-v2.png" alt="Beam Mobile home with the TV remote bar" /><br/><sub>Home, with the TV's remote bar</sub></td>
+<td width="25%" align="center" valign="top"><img src="docs/screenshots/mobile-detail-v2.png" alt="Beam Mobile movie page" /><br/><sub>Play here, or on the TV</sub></td>
 <td width="25%" align="center" valign="top"><img src="docs/screenshots/mobile-downloads-v1.png" alt="Beam Mobile downloads" /><br/><sub>Downloads for offline</sub></td>
 <td width="25%" align="center" valign="top"><img src="docs/screenshots/mobile-cast-v1.png" alt="Beam Mobile Cast to a TV" /><br/><sub>Cast to any TV</sub></td>
 </tr></table>
@@ -139,4 +142,4 @@ One toggle publishes the whole library — movies and TV with covers and titles 
   <img src="https://img.shields.io/badge/TMDB-1A1A1A?style=for-the-badge&logo=themoviedatabase&logoColor=01B4E4" />
 </p>
 
-<sub>Screens shown are design renders of the apps' actual UI layouts (Beam, Beam Mobile and Beam Receiver); the dashboard screens are the real page fed simulated data. Poster artwork, stills and titles are public-domain classic films and TV via Wikimedia Commons; device names in the Cast list are examples.</sub>
+<sub>Screens shown are design renders of the apps' actual UI layouts (Beam, Beam Mobile and Beam Receiver); the dashboard screens are the real page fed simulated data. Poster artwork, stills and titles are public-domain classic films and TV via Wikimedia Commons; the title logos are original lettering made for these renders, standing in for the logos the apps fetch; device names in the Cast list are examples.</sub>
