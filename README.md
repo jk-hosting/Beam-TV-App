@@ -7,9 +7,13 @@
 <p align="center">
   <img src="https://img.shields.io/badge/ANDROID%20TV-Leanback%20native-7EA6FF?style=for-the-badge&logo=android&logoColor=white&labelColor=1A1A1A" />
   <img src="https://img.shields.io/badge/ANDROID-8.0%2B-7EA6FF?style=for-the-badge&labelColor=1A1A1A" />
+  <img src="https://img.shields.io/badge/BEAM%20MOBILE-Phone%20%26%20tablet-7EA6FF?style=for-the-badge&labelColor=1A1A1A" />
+  <img src="https://img.shields.io/badge/BEAM%20RECEIVER-Any%20Android%20TV-7EA6FF?style=for-the-badge&labelColor=1A1A1A" />
 </p>
 
 Beam turns an Android TV box into a direct line to your own media, wherever it lives. No Plex server, no transcoding box in a closet, no per-source apps: an embedded engine streams the original bytes straight to the decoder, with RAM read-ahead tuned hard enough that high-bitrate 4K HDR remuxes play smoothly on hardware as old as the 2015 NVIDIA SHIELD.
+
+Two companion apps extend it. **[Beam Mobile](#beam-mobile)** puts the library on your phone or tablet: browse, play, send to the TV, download and cast. **[Beam Receiver](#beam-receiver)** turns any Android TV into a cast target for those downloads.
 
 <p align="center"><img src="docs/screenshots/hub-v3.png" width="92%" alt="Beam home hub" /></p>
 
@@ -72,6 +76,48 @@ Flip one toggle and Beam serves a live dashboard straight from the TV box — op
 <p align="center"><img src="docs/screenshots/dashboard-v1.png" width="92%" alt="Web dashboard — live playback and device stats" /></p>
 <p align="center"><img src="docs/screenshots/dashboard-library-v1.png" width="92%" alt="Web dashboard — library browser with facets and filters" /></p>
 
+<a id="beam-mobile"></a>
+## <img src="https://img.shields.io/badge/BEAM%20MOBILE-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Your library, in your pocket
+
+A phone and tablet app (Android 8+) built on Beam on your TV. Same library, same artwork, same watch history: browse it from the sofa, play it on the phone, send it to the big screen or take it with you. It talks only to your TV over your home network, with no account, no cloud, and no keys or passwords stored on the phone.
+
+<table><tr>
+<td width="25%" align="center" valign="top"><img src="docs/screenshots/mobile-home-v1.png" alt="Beam Mobile home with the TV remote bar" /><br/><sub>Home, with the TV's remote bar</sub></td>
+<td width="25%" align="center" valign="top"><img src="docs/screenshots/mobile-detail-v1.png" alt="Beam Mobile movie page" /><br/><sub>Play here, or on the TV</sub></td>
+<td width="25%" align="center" valign="top"><img src="docs/screenshots/mobile-downloads-v1.png" alt="Beam Mobile downloads" /><br/><sub>Downloads for offline</sub></td>
+<td width="25%" align="center" valign="top"><img src="docs/screenshots/mobile-cast-v1.png" alt="Beam Mobile Cast to a TV" /><br/><sub>Cast to any TV</sub></td>
+</tr></table>
+
+- **The same library, in your hand.** Posters, backdrops, title logos, ratings, cast and credits from your TV. Home brings **Continue watching**, **Next up**, top-rated and genre rows.
+- **Find anything.** Movie and TV grids with search, sorting by title, newest, IMDb rating or recently watched, and Unwatched, In progress, genre and Downloaded filters.
+- **Play it here.** A built-in player streams the original file from your TV, and the next episode starts by itself. Resume points and watched marks sync both ways with the TV.
+- **Send it to the TV.** Tap **On TV** and the title starts on the big screen. A remote bar appears above the tabs and opens into a full remote with play/pause, a seek bar, −10/+30 s, previous/next episode and stop.
+- **Download for offline.** Download movies, single episodes or whole seasons, and pause, resume or retry them. Storage used and free is shown at a glance. Titles, details and art stay browsable with the TV out of reach, and progress made away from home syncs back when you return.
+- **Cast to any TV.** Downloads cast to Chromecast and Google TV (Google Cast), to Samsung, LG and other smart TVs (DLNA), or to **Beam Receiver**. The phone serves the file itself over your Wi-Fi, so nothing goes through the internet.
+- **Casting that just plays.** MKV files are repackaged on the fly without re-encoding. Audio a Chromecast can't play (DTS, TrueHD, AC-3, E-AC-3) can be converted to AAC, and H.265 converted to H.264 for older Chromecasts. Each conversion is a switch in Settings.
+- **A Kids profile.** With Kids Mode on, "Who's watching?" opens at every launch. Kids get their own bright look and only the titles picked for them on the TV: no remote, no settings, just Play.
+- **Your player, your call.** Use the built-in player, choose each time, or always open a favourite app such as VLC, mpv or MX Player. If the phone can't decode a file, Beam Mobile offers to open it in an external player.
+- **Finds your TV.** One tap searches the network, or you can type the address Beam shows. When the TV is out of reach it tries again every 30 seconds, so the full library comes back as you walk in the door.
+
+<a id="beam-receiver"></a>
+## <img src="https://img.shields.io/badge/BEAM%20RECEIVER-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Any Android TV, ready to cast to
+
+A small standalone app for Android TV, Google TV and NVIDIA SHIELD (Android 8+). Install it once and the TV appears in Beam Mobile's Cast list. Your phone's downloads then play on the big screen through Beam's own player.
+
+<p align="center"><img src="docs/screenshots/receiver-player-v1.png" width="92%" alt="Beam Receiver playing a cast, with spec chips and controls" /></p>
+
+- **Shows up by itself.** A UPnP/DLNA media renderer that answers network discovery as "Living Room TV (Beam)", so it is never mistaken for the TV's built-in receiver. It rejoins after Wi-Fi or Ethernet changes.
+- **Always ready.** Runs quietly from boot (**Start with TV**). A video sent while the TV sleeps wakes the screen and opens over whatever is on, and Back or Stop returns the TV to it.
+- **Beam's picture pipeline.** Dolby Vision profile 7 remuxes fall back to their HDR10 base layer instead of a black screen (the player shows **HDR10 FALLBACK**). HDR switches on even when a file's colour tags are missing, and a 128 MB buffer rides out Wi-Fi dips at remux bitrates.
+- **Sound stays intact.** Audio passes through to your AV receiver or soundbar as the TV allows. There's no refresh-rate switching, so no HDMI resync drops the sound at the start, and DTS and TrueHD can be decoded on the TV as a backup.
+- **Controls you know.** Beam's player look: title, spec chips (`4K · DOLBY VISION · TRUEHD 7.1 · 23.976 · HEVC`), a timebar, −5/+15 s, subtitles (off until you pick a track) and audio tracks. The phone's remote bar drives it too: play, pause, seek and stop.
+- **Nothing to set up.** No account and no library to build. A poster card shows while a video loads or is paused, and the ready screen shows the TV's name and address.
+
+<table><tr>
+<td width="50%" align="center" valign="top"><img src="docs/screenshots/receiver-loading-v1.png" alt="Beam Receiver loading card" /><br/><sub>Poster card while it loads</sub></td>
+<td width="50%" align="center" valign="top"><img src="docs/screenshots/receiver-ready-v1.png" alt="Beam Receiver ready screen" /><br/><sub>Ready screen: name, address, start with TV</sub></td>
+</tr></table>
+
 ## <img src="https://img.shields.io/badge/SHARING-7EA6FF?style=for-the-badge&labelColor=1A1A1A" height="26"/> Media Server for Kodi
 
 One toggle publishes the whole library — movies and TV with covers and titles — as a **UPnP/DLNA media server**. Kodi (or any UPnP client) browses Beam and direct-plays from Mega, your seedbox, and local drives, with Beam's engines relaying the original bytes. Survives reboots until you switch it off — and the same relay is what lets the dashboard stream to your phone.
@@ -93,4 +139,4 @@ One toggle publishes the whole library — movies and TV with covers and titles 
   <img src="https://img.shields.io/badge/TMDB-1A1A1A?style=for-the-badge&logo=themoviedatabase&logoColor=01B4E4" />
 </p>
 
-<sub>Screens shown are design renders of the app's actual UI layouts; the dashboard screens are the real page fed simulated data. Poster artwork and titles are public-domain classic films via Wikimedia Commons.</sub>
+<sub>Screens shown are design renders of the apps' actual UI layouts (Beam, Beam Mobile and Beam Receiver); the dashboard screens are the real page fed simulated data. Poster artwork, stills and titles are public-domain classic films and TV via Wikimedia Commons; device names in the Cast list are examples.</sub>

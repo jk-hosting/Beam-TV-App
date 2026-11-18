@@ -168,6 +168,8 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
       <a href="#seedbox">Seedbox</a>
       <a href="#drives">Drives</a>
       <a href="#sharing">Sharing</a>
+      <a href="#mobile">Mobile</a>
+      <a href="#receiver">Receiver</a>
     </div>
     <a class="btn small nav-cta" href="https://buy.stripe.com/8x27sEbTx3Ks7jx2VD5wI00">Get Beam — €12.99</a>
   </div>
@@ -310,6 +312,40 @@ footer .copy{color:#5c6474; font-size:.8rem; width:100%; margin-top:10px}
       <li>Beam shows a network address (ending in <span class="kbd">/Beam</span>). Open it in any browser on the same network.</li>
     </ol>
     <div class="note"><span class="tag">Note</span> &nbsp;The dashboard can control playback, send titles to the TV and mark them watched — <b>never</b> your settings, accounts or files.</div>
+  </div>
+</section>
+
+<section id="mobile">
+  <div class="wrap narrow">
+    <div class="shead">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>
+      <h2>Beam Mobile (phone &amp; tablet)</h2>
+    </div>
+    <p class="sub-lead">Optional. Beam Mobile reads the library from Beam on your TV, so the TV does the setup and the phone just connects. Android 8 or newer, on the same Wi-Fi as the TV.</p>
+    <ol class="steps-list">
+      <li>On the TV, in Beam: <span class="path">Settings → Network Sharing → Web Dashboard</span> → on. This gives the phone the library, the remote and watched sync.</li>
+      <li>Also turn on <span class="path">Media Server for Kodi (UPnP)</span>. The phone needs it to play and download Mega and seedbox titles, and to find the TV by itself. Local-drive titles also play with <span class="path">Share Local Library (Beam Link)</span> on.</li>
+      <li>On the phone, open Beam Mobile → <span class="path">Settings → TV connection</span> and tap <b>Find TV</b>, or type the address Beam shows under its Settings and tap <b>Connect</b>.</li>
+      <li>Optional: <span class="path">Settings → Casting → Cast to TVs</span> adds <b>Cast</b> to downloaded titles. <b>Convert audio</b> and <b>Convert video</b> help older Chromecasts.</li>
+    </ol>
+    <div class="note"><span class="tag">Note</span> &nbsp;<span class="path">Settings → Kids Mode</span> on the phone adds a "Who's watching?" screen. The Kids profile shows the titles picked for Kids on the TV; picking stays on the TV.</div>
+  </div>
+</section>
+
+<section id="receiver">
+  <div class="wrap narrow">
+    <div class="shead">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><path d="M2 12a9 9 0 0 1 8 8M2 16a5 5 0 0 1 4 4M2 20h.01"/></svg></span>
+      <h2>Beam Receiver (any Android TV)</h2>
+    </div>
+    <p class="sub-lead">Optional. It lets an Android TV play downloads cast from Beam Mobile. It doesn't need Beam on that TV, an account or a library.</p>
+    <ol class="steps-list">
+      <li>Install Beam Receiver on the TV and open it once. It shows <b>Ready to play from Beam Mobile</b>, with the name phones will see and the TV's address.</li>
+      <li>Leave <b>Start with TV: On</b> so the receiver is ready after every restart.</li>
+      <li>On Android 10 or newer, allow <b>Display over other apps</b> so videos can open while another app is on screen. The ready screen has the button. If this TV hides the setting, the ready screen also shows a one-line adb command that grants it.</li>
+      <li>In Beam Mobile, open a downloaded title, tap <b>Cast</b> and choose <b>"&lt;TV name&gt; (Beam)"</b>.</li>
+    </ol>
+    <div class="note"><span class="tag">Note</span> &nbsp;Back or Stop closes the player and returns the TV to whatever was on before.</div>
   </div>
 </section>
 
